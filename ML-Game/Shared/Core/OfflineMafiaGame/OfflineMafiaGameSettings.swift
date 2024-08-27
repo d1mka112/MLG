@@ -13,8 +13,16 @@ class OfflineMafiaGameSettings: Codable {
         var isActive: Bool
     }
 
-    var playersCount: Int = 1
     var mafiasCount: Int = 1
+    var playersCount: Int = 1 {
+        willSet {
+            if newValue < 3 {
+                shouldBeRole = shouldBeRole.map{
+                    .init(role: $0.role, isActive: false)
+                }
+            }
+        }
+    }
 
     var selectedRolesCount: Int {
         shouldBeRole.reduce(into: 0) { partialResult, role in

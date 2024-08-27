@@ -28,22 +28,31 @@ struct OfflineMafiaGameSettingsScreen: View {
 
             MLGSection(title: Localization.additionalRoles) {
                 MLGScrollViewIfNeeded {
-                    ForEach(0..<$viewModel.game.settings.shouldBeRole.count) { index in
-                        let role = viewModel.game.settings.shouldBeRole[index].role
-
+                    
+                    ForEach($viewModel.game.settings.shouldBeRole, id: \.role) { role in
                         MLGCheckbox(
-                            isChecked: $viewModel.game.settings.shouldBeRole[index].isActive,
-                            title: RoleInfoProvider.getName(by: role),
-                            image: RoleInfoProvider.getImage(by: role),
+                            isChecked: role.isActive,
+                            title: RoleInfoProvider.getName(by: role.role.wrappedValue),
+                            image: RoleInfoProvider.getImage(by: role.role.wrappedValue),
                             isEnabled: viewModel.isAddingRoleEnabled
                         )
                     }
+//                    ForEach(0..<$viewModel.game.settings.shouldBeRole.count) { index in
+//                        let role = viewModel.game.settings.shouldBeRole[index].role
+//
+//                        MLGCheckbox(
+//                            isChecked: $viewModel.game.settings.shouldBeRole[index].isActive,
+//                            title: RoleInfoProvider.getName(by: role),
+//                            image: RoleInfoProvider.getImage(by: role),
+//                            isEnabled: viewModel.isAddingRoleEnabled
+//                        )
+//                    }
                 }
             }
 
             MLGSection {
                 MLGNavigationLink {
-                    OfflineMafiaPlayerNameInputScreen()
+                    LazyView(OfflineMafiaPlayerNameInputScreen())
                 } label: {
                     Text(Localization.buttonTitle)
                 }

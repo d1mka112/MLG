@@ -74,6 +74,8 @@
 		A571B9C228F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */; };
 		A571B9C428F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */; };
 		A571B9C528F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */; };
+		BC09D48A2C7B707300EA7F6B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D4892C7B707300EA7F6B /* LazyView.swift */; };
+		BC09D48B2C7B707300EA7F6B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D4892C7B707300EA7F6B /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,7 @@
 		A571B99B28F6DED300C08CB1 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGameSettingsScreen.swift; sourceTree = "<group>"; };
 		A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePlayerNameInputScreen.swift; sourceTree = "<group>"; };
+		BC09D4892C7B707300EA7F6B /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				17E52FDB28F744C0000D2FB7 /* FullScreen.swift */,
+				BC09D4892C7B707300EA7F6B /* LazyView.swift */,
 				17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */,
 				17CCF7FD28F7642400C8046A /* MLGTitleSubtitle.swift */,
 				17CCF80028F7F69000C8046A /* MLGNavigationView.swift */,
@@ -431,7 +435,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					A571B97B28F6DED300C08CB1 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -516,6 +520,7 @@
 				174ACF1C28FF1F1600ECA362 /* RoleAllocator.swift in Sources */,
 				A53107CC28FF22A700195B12 /* MLGUnderlineTabView.swift in Sources */,
 				17D711FE28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift in Sources */,
+				BC09D48A2C7B707300EA7F6B /* LazyView.swift in Sources */,
 				176659A928F8C24900288E9D /* SetupImageSize.swift in Sources */,
 				174ACF2028FF4A2D00ECA362 /* Array+SafeIndex.swift in Sources */,
 				17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */,
@@ -558,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC09D48B2C7B707300EA7F6B /* LazyView.swift in Sources */,
 				17E52FDD28F744C0000D2FB7 /* FullScreen.swift in Sources */,
 				A53107CA28FF0B3D00195B12 /* MLGCardView.swift in Sources */,
 				A571B9C228F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */,
@@ -646,9 +652,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -704,9 +712,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -792,6 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML72UHPY4M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -820,6 +831,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML72UHPY4M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -886,6 +898,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML72UHPY4M;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -905,6 +918,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML72UHPY4M;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
