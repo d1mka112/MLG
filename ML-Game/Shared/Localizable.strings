@@ -43,6 +43,7 @@
 "OfflineMafiaCardScreen.button.title" = "Ваша роль";
 "OfflineMafiaCardScreen.button.nextPlayer" = "Перейти к следующему игроку";
 "OfflineMafiaCardScreen.button.goToLeader" = "Перейти к ведущему игроку";
+"OfflineMafiaCardScreen.button.leader" = "Ведущий";
 
 // MARK: - OfflineMafiaPlayersScreen String
 "OfflinePlayerNameInputScreen.title" = "Игроки";

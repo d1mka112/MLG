@@ -68,11 +68,13 @@ enum RoleAllocator {
     }
 
     static var playersRange: Range<Int> {
-        1..<20
+        3..<20
     }
 
     static func playersRange(for gameSettings: OfflineMafiaGameSettings) -> Range<Int> {
-        1..<20
+        let activeRoles = gameSettings.shouldBeRole.filter{$0.isActive == true}.count
+        let minRange = max(3, 3 + activeRoles - 1)
+        return minRange..<20
     }
 
     static func mafiasRange(for gameSettings: OfflineMafiaGameSettings) -> Range<Int> {

@@ -16,7 +16,7 @@ struct MLGTextField: View {
             .padding(Design.Spacing.standart)
             .frame(maxWidth: .infinity)
             .multilineTextAlignment(.center)
-            .foregroundColor(Color.black)
+            .foregroundColor(Design.Colors.primary)
             .background(
                 Capsule()
                     .foregroundColor(Design.Colors.background)

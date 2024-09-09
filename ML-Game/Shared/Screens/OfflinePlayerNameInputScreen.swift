@@ -15,10 +15,10 @@ struct OfflineMafiaPlayerNameInputScreen: View {
             MLGSection(title: Localization.sectionTitle) {
                 MLGScrollViewIfNeeded {
                     VStack {
-                        ForEach(0..<viewModel.game.settings.playersCount) { index in
+                        ForEach($viewModel.game.players, id: \.id) { player in
                             MLGTextField(
-                                placeholder: viewModel.defaultName(for: index),
-                                text: $viewModel.game.players[index].name
+                                placeholder: player.placeHolderName.wrappedValue,
+                                text: player.name
                             )
                         }
                     }
@@ -26,7 +26,8 @@ struct OfflineMafiaPlayerNameInputScreen: View {
             }
 
             MLGNavigationLink {
-                OfflineMafiaCardScreen()
+//                OfflineMafiaCardScreen()
+                OfflineMafiaCardScreenTwo()
             } label: {
                 Text(Localization.buttonTitle)
             }.simultaneousGesture(
@@ -64,10 +65,6 @@ extension OfflineMafiaPlayerNameInputScreen {
 
         init() {
             game.createPlayers()
-        }
-
-        func defaultName(for index: Int) -> String {
-            "\(Localization.playerName) \(game.players[index].id)"
         }
     }
 }

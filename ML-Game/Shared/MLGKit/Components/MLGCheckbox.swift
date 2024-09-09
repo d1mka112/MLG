@@ -16,6 +16,7 @@ struct MLGCheckbox : View {
     var imageColor: Color = Design.Colors.primary
     var borderColor: Color = Design.Colors.primary
     var background: Color = Design.Colors.background
+    var inactiveColor: Color = Design.Colors.special
     var isEnabled: Bool = true
     var onToggle: (()->())?
 
@@ -32,7 +33,7 @@ struct MLGCheckbox : View {
                             width: Design.Size.big,
                             height: Design.Size.big
                         )
-                        .foregroundColor(imageColor)
+                        .foregroundColor((isChecked || isEnabled) ? imageColor : inactiveColor)
                     Spacer()
                 }
             }
@@ -42,7 +43,7 @@ struct MLGCheckbox : View {
                 .frame(
                     maxWidth: .infinity
                 )
-                .foregroundColor(titleColor)
+                .foregroundColor((isChecked || isEnabled) ? titleColor : inactiveColor)
                 .padding(Design.Spacing.standart)
         }
         .frame(
@@ -60,7 +61,9 @@ struct MLGCheckbox : View {
         .onTapGesture {
             if isEnabled || isChecked {
                 Feedback.pull()
-                isChecked.toggle()
+                withAnimation {
+                    isChecked.toggle()
+                }
                 onToggle?()
             }
         }

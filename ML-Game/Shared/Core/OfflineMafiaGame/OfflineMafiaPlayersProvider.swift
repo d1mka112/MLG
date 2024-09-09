@@ -29,7 +29,7 @@ enum OfflineMafiaPlayersProvider {
         OfflineMafiaPlayer(
             id: index,
             role: .none,
-            name: makeDefaultName(by: index)
+            placeholderName: makeDefaultName(by: index)
         )
     }
 
